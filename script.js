@@ -1,26 +1,39 @@
-document.getElementById("CHART").style.display = "none"
+document.getElementById("CHART").style.display = "block"
 document.getElementById("BAR").style.display = "none"
 document.getElementById("PIE").style.display = "none"
-
+document.getElementById("GREEN_HOUSE").style.display = "none"
 
 
 RESOURCE_SAVE.onclick = function() {
     document.getElementById("PIE").style.display = "none"
     document.getElementById("BAR").style.display = "none"
+    document.getElementById("GREEN_HOUSE").style.display = "none"
     document.getElementById("CHART").style.display = "block"
 }
 
 RESOURCE_OUT.onclick = function() {
     document.getElementById("PIE").style.display = "none"
     document.getElementById("CHART").style.display = "none"
+    document.getElementById("GREEN_HOUSE").style.display = "none"
     document.getElementById("BAR").style.display = "block"
 }
 
 POWER.onclick = function() {
     document.getElementById("CHART").style.display = "none"
     document.getElementById("BAR").style.display = "none"
+    document.getElementById("GREEN_HOUSE").style.display = "none"
     document.getElementById("PIE").style.display = "block"
 }
+
+SHOW_INFO.onclick = function() {
+    document.getElementById("CHART").style.display = "none"
+    document.getElementById("BAR").style.display = "none"
+    document.getElementById("PIE").style.display = "none"
+    document.getElementById("GREEN_HOUSE").style.display = "block"
+    
+}
+    
+
 
 const name = 27
 const temp = 30
@@ -29,6 +42,8 @@ const oxi = 30
 const pop = 50
 const k = 78
 
+
+async function DataFetch(){
 var days = document.getElementById("count_days")
 days.innerHTML = `Количество дней: ${name}`
 
@@ -98,4 +113,6 @@ power = new Chart("pie", {
         ]
     }})
 
+}
 
+DataFetch()
